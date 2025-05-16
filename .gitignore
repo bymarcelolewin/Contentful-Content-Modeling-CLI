@@ -1,0 +1,3 @@
+.DS_Store
+content-models/**/.contentfulrc.json
+node_modules/
