@@ -33,39 +33,39 @@ program
 program
   .command('create-template')
   .description('Create a content model template folder using an existing template')
-  .option('--name <name>', '[required with --template] The name of the new model folder')
-  .option('--template <template>', '[required with --name] The template to use (e.g., "generic")')
+  .option('--model <name>', '[required with --template] The name of the new model folder')
+  .option('--template <template>', '[required with --model] The template to use (e.g., "generic")')
   .option('--list', 'List all available templates')
   .action((options, command) => {
     const script = path.join(__dirname, 'create-content-model-template.js');
 
-    const usingName = typeof options.name !== 'undefined';
+    const usingModel = typeof options.model !== 'undefined';
     const usingTemplate = typeof options.template !== 'undefined';
     const usingList = options.list === true;
 
     // --list must be used on its own
-    if (usingList && (usingName || usingTemplate)) {
+    if (usingList && (usingModel || usingTemplate)) {
       console.error('\n❌ The --list option must be used on its own.\n');
       console.error(); // optional: for spacing
       process.exit(1);
     }
 
-    // If --name or --template is provided, both are required
-    if (!usingList && (usingName !== usingTemplate)) {
-      console.error('\n❌ You must provide both --name and --template together.\n');
+    // If --model or --template is provided, both are required
+    if (!usingList && (usingModel !== usingTemplate)) {
+      console.error('\n❌ You must provide both --model and --template together.\n');
       console.error(); // optional: for spacing
       process.exit(1);
     }
 
     // If no options at all
-    if (!usingList && !usingName && !usingTemplate) {
-      console.error('\n❌ You must either:\n  - Use --list\n  - Or use both --name and --template\n');
+    if (!usingList && !usingModel && !usingTemplate) {
+      console.error('\n❌ You must either:\n  - Use --list\n  - Or use both --model and --template\n');
       console.error(); // optional: for spacing
       process.exit(1);
     }
 
     const args = [];
-    if (usingName) args.push('--name', options.name);
+    if (usingModel) args.push('--model', options.model);
     if (usingTemplate) args.push('--template', options.template);
     if (usingList) args.push('--list');
 
