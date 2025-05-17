@@ -94,7 +94,7 @@ console.log("\n---------------------------------------");
 console.log("MIGRATING - CONFIRMATION REQUIRED");
 console.log("---------------------------------------");
 try {
-  execSync(`contentful space migration temp-create-content-model.js`, {
+  execSync(`npx contentful space migration temp-create-content-model.js`, {
     stdio: "inherit",
     cwd: modelFolder,
   });

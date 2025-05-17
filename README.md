@@ -10,7 +10,7 @@ The **Contentful Content Modeling CLI** (`ccm`) tool allows you to easily create
 - Create a folder named 'contentful-content-modeling-cli'.
 - Clone this repo in there.
 - In that folder, run 'npm install'.
-- Run 'npm link'.
+- Run 'npm link' (if you get an error, you may have to run 'sudo npm link' and login with your admin password).
 - Test it using 'ccm --help' from any terminal.
 
 ## More documentation coming soon!
