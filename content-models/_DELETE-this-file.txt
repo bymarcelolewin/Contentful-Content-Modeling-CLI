@@ -1,0 +1,2 @@
+Empty folders are not copied down from a github repo, so I created this file to force that.
+Feel free to delete it once the folder is created.

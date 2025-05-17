@@ -4,13 +4,32 @@ The **Contentful Content Modeling CLI** (`ccm`) tool allows you to easily create
 
 ---
 
-## Getting Started
+## Requirements
 
-- Make sure you have Node.js installed.
-- Create a folder named 'contentful-content-modeling-cli'.
-- Clone this repo in there.
-- Switch to "Contentful-Content-Modeling-CLI" folder and run 'npm install'.
-- Run 'npm link' (if you get an error, you may have to run 'sudo npm link' and login with your admin password).
-- Test it using 'ccm --help' from any terminal.
-- Create your first model using 'ccm clone-template --model content-model-blog --template content-model-blog
+- Install Node.js if you don't already have it.
+
+## Cloning Repo
+- Select a folder where you want to clone this repo into.
+- Clone this repo using any of your prefer ways.
+
+## CLI Setup
+- Switch to "Contentful-Content-Modeling-CLI" folder.
+- In your terminal run: ```npm install```
+- Then run ```npm link``` or if you get a permission error, run ```sudo npm link```.
+- Test the CLI by typing in ```ccm --help``` from any where.  CCM should be globally available.
+
+## Create Your First Model
+- Clone a content model template using ```ccm clone-template --model [your-content-model-name] --template content-model-blog```
+- Once your model is created, swich to the content-types/[your-content-model-name] folder and configure the .contentfulrc.json file
+
+```
+{
+  "managementToken": "your-cma-token-here",
+  "activeSpaceId": "your-contentful-space-here",
+  "activeEnvironmentId": "your-contentful-environment-here",
+  "host": "api.contentful.com"
+}
+```
+You can get the CMA token from Contentful, under the cogwheel -> CMA Tokens.
+
 ## More documentation coming soon!
