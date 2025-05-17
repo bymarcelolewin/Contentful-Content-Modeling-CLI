@@ -24,12 +24,9 @@ if (listFlagIndex !== -1) {
   try {
     const folders = fs
       .readdirSync(templatesDir, { withFileTypes: true })
-      .filter(
-        (dirent) =>
-          dirent.isDirectory() && dirent.name.startsWith("content-model-")
-      )
+      .filter((dirent) => dirent.isDirectory())
       .map((dirent) => {
-        const name = dirent.name.replace("content-model-", "");
+        const name = dirent.name;
         const location = `templates/${dirent.name}`;
 
         // Look inside content-types folder

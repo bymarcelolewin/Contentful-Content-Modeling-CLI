@@ -19,8 +19,8 @@ The **Contentful Content Modeling CLI** (`ccm`) tool allows you to easily create
 - Test the CLI by typing in ```ccm --help``` from any where.  CCM should be globally available.
 
 ## Create Your First Model
-- Clone a content model template using ```ccm clone-template --model [your-content-model-name] --template content-model-blog```
-- Once your model is created, swich to the content-types/[your-content-model-name] folder and configure the .contentfulrc.json file
+- Clone a content model template using ```ccm clone-template --model [your-model-name] --template blog```
+- Once your model is created, swich to the content-types/[your-model-name] folder and configure the .contentfulrc.json file
 
 ```
 {
