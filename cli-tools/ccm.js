@@ -28,16 +28,16 @@ program
   });
 
 // ---------------------------------------------
-// cm create-template --name <name> [--template <template>] [--list]
+// cm clone-template --name <name> [--template <template>] [--list]
 // ---------------------------------------------
 program
-  .command('create-template')
-  .description('Create a content model template folder using an existing template')
+  .command('clone-template')
+  .description('Creates a content model folder inside content-models using an existing template from the lib/templates folder.')
   .option('--model <name>', '[required with --template] The name of the new model folder')
   .option('--template <template>', '[required with --model] The template to use (e.g., "generic")')
   .option('--list', 'List all available templates')
   .action((options, command) => {
-    const script = path.join(__dirname, 'create-content-model-template.js');
+    const script = path.join(__dirname, 'clone-content-model-template.js');
 
     const usingModel = typeof options.model !== 'undefined';
     const usingTemplate = typeof options.template !== 'undefined';

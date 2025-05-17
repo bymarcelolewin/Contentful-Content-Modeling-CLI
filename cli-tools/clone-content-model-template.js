@@ -79,7 +79,7 @@ if (!templateName || !modelName) {
   process.exit(1);
 }
 
-const templateFolder = path.join(templatesDir, `content-model-${templateName}`);
+const templateFolder = path.join(templatesDir, `${templateName}`);
 const modelFolder = path.join(modelsDir, modelName);
 
 // --------------------------------------------
@@ -87,7 +87,7 @@ const modelFolder = path.join(modelsDir, modelName);
 // --------------------------------------------
 if (!fs.existsSync(templateFolder)) {
   console.error(
-    `❌ Template folder does not exist: templates/content-model-${templateName}`
+    `❌ Template folder does not exist: templates/${templateName}`
   );
   process.exit(1);
 }
